@@ -50,7 +50,7 @@ body {
   }
 
   main {
-    margin: 2em;
+    margin-bottom: 2em;
   }
   input {
     /* padding: 0.6rem 7rem; */
@@ -67,3 +67,11 @@ body {
     font-size: 0.9rem;
     border-radius: 3px;
   }
+  input:focus {
+    outline: none;
+  }
+
+.error {
+    color: red;
+    text-align:left;
+}
