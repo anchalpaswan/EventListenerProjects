@@ -19,32 +19,33 @@ function isPrime(num) {
         len = -1;
     }
     else {
-
-        len = input.value;
-        console.log(len);
-        for (let i = 0; i < len; ++i) {
-            const num = document.createElement('a');
-            num.innerHTML = `${i}`;
-        
-            if ( isPrime(i)) {
-                num.style.background = 'rgb(235, 65, 65)'
+        if (len !== input.value) {
+            len = input.value;
+            error.textContent ='';
+            for (let i = 0; i < len; ++i) {
+                const num = document.createElement('a');
+                num.innerHTML = `${i}`;
+            
+                if ( isPrime(i)) {
+                    num.style.background = 'rgb(235, 65, 65)'
+                }
+                else if (i % 2 == 0) {
+                    num.style.background = 'rgb(42, 219, 42)'
+                }else {
+                    num.style.background = '#FCDA3A'
+                }
+            
+                num.className = 'number';
+            
+                num.addEventListener('mousedown', function() {
+                    this.classList.add('clicked')
+                })
+                num.addEventListener('mouseup' , function() {
+                    this.classList.remove('clicked');
+                })
+                container.appendChild(num);
             }
-            else if (i % 2 == 0) {
-                num.style.background = 'rgb(42, 219, 42)'
-            }else {
-                num.style.background = '#FCDA3A'
-            }
-        
-            num.className = 'number';
-        
-            num.addEventListener('mousedown', function() {
-                this.classList.add('clicked')
-            })
-            num.addEventListener('mouseup' , function() {
-                this.classList.remove('clicked');
-            })
-            container.appendChild(num);
-        }
+    }
     }
 }
           

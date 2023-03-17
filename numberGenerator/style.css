@@ -67,6 +67,10 @@ body {
     font-size: 0.9rem;
     border-radius: 3px;
   }
+
+  button:active {
+    transform: scale(0.95);
+  }
   input:focus {
     outline: none;
   }
